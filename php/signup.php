@@ -34,7 +34,7 @@
                         if(in_array($img_type, $types) === true){   
                             
                             
-                            $time = time();*/
+                            $time = time();
                             $new_img_name = $time.$img_name; /* fotoğrafları şimdiki zaman ile damgalayıp benzersiz isimli fotograflar yataıyoruz*/
 
                             if(move_uploaded_file($tmp_name,"images/".$new_img_name)){  /* fotoğrafı veritabanına değil, yerel klasore kaydediyoruz, veritabanına sadece ismini kaydediyoruz*/

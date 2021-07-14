@@ -1,5 +1,5 @@
 const form = document.querySelector(".typing-area"),           /* chat.php'den gerekli alanlar alınır*/
-incoming_id = form.querySelector(".incoming_id").value,
+incoming_id = form.querySelector(".incoming_id"),              /* mesajların yüklenmesi için alıcının id değerinin phpye gönderilmesi gerekir*/
 inputField = form.querySelector(".input-field"),
 sendBtn = form.querySelector("button"),
 chatBox = document.querySelector(".chat-box");
@@ -31,7 +31,7 @@ sendBtn.onclick = ()=>{
     let formData = new FormData(form);      /* xml formdata verisi  phpye yollanır*/
     xhr.send(formData);
 }
-chatBox.onmouseenter = ()=>{        /* mouse ile tıklandıgında chat box aktif olur*/
+chatBox.onmouseenter = ()=>{        /* mouse ile tıklandıgında veya scroll edildiğnde otomatik scroll durur*/
     chatBox.classList.add("active");
 }
 
@@ -48,16 +48,16 @@ setInterval(() =>{
             let data = xhr.response;
             chatBox.innerHTML = data;               /* formdata html yapısında gönderilir*/
             if(!chatBox.classList.contains("active")){
-                scrollToBottom();                      /* chatbox sürekli yenilenerek altta durmaya itilir, 500 ms'de bir*/
+                scrollToBottom();                      /* mouse devreye girmedğinde chatbox sürekli yenilenerek altta durmaya itilir*/
               }
           }
       }
     }
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send("incoming_id="+incoming_id);
+    xhr.send("incoming_id="+incoming_id.value);     /*alıcı id değeri ajax ile gönderilir*/
 }, 500);
 
 function scrollToBottom(){
-    chatBox.scrollTop = chatBox.scrollHeight;
+    chatBox.scrollTop = chatBox.scrollHeight;   /* otomatik olarak chatbox'ı kaydırır*/
   }
   
