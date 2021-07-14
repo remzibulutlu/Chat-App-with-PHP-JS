@@ -1,11 +1,11 @@
 <?php 
   session_start();
   include_once "php/config.php";
-  if(!isset($_SESSION['unique_id'])){
+  if(!isset($_SESSION['unique_id'])){   /*session eğer unique id'ye eşit değilse login'e yönlendir*/
     header("location: login.php");
   }
 ?>
-<?php include_once "header.php"; ?>
+<?php include_once "header.php"; ?>     <!-- header.php include et-->
 <body>
   <div class="wrapper">
     <section class="chat-area">

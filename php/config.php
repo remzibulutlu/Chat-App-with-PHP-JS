@@ -1,5 +1,5 @@
 <?php
-  $hostname = "localhost";
+  $hostname = "localhost";          /* veritabanımıza bağlanıyoruz*/
   $username = "root";
   $password = "";
   $dbname = "chatapp";

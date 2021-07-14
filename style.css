@@ -23,7 +23,7 @@ body{
               0 32px 64px -48px rgba(0,0,0,0.5);
 }
 
-/* Login & Signup Form CSS Start */
+
 .form{
   padding: 25px 30px;
 }
@@ -113,7 +113,7 @@ body{
 }
 
 
-/* Users List CSS Start */
+
 .users{
   padding: 25px 30px;
 }
@@ -202,7 +202,7 @@ body{
   color: #fff;
 }
 .search button.active i::before{
-  content: '\f00d';
+  content: '\f00d'; /* çarpı ikonu*/
 }
 .users-list{
   max-height: 350px;
@@ -237,7 +237,7 @@ body{
   color: #ccc;
 }
 
-/* Chat Area CSS Start */
+
 .chat-area header{
   display: flex;
   align-items: center;
@@ -345,7 +345,7 @@ body{
   pointer-events: auto;
 }
 
-/* Responive media query */
+
 @media screen and (max-width: 450px) {
   .form, .users{
     padding: 20px;

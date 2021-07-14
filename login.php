@@ -1,9 +1,13 @@
 <?php 
+
   session_start();
-  if(isset($_SESSION['unique_id'])){
+  if(isset($_SESSION['unique_id'])){    /* session var ise kullanıcıların olduğu sayfaya yönlendir */
     header("location: users.php");
   }
+
 ?>
+
+<!-- Login Giriş Düzenlemesi-->
 
 <?php include_once "header.php"; ?>
 <body>
@@ -25,7 +29,7 @@
           <input type="submit" name="submit" value="Continue to Chat">
         </div>
       </form>
-      <div class="link">Not yet signed up? <a href="index.php">Signup</a></div>
+      <div class="link">Not yet signed up? <a href="index.php">Signup</a></div> <!-- kaydol sayfasına yönlendir -->
     </section>
   </div>
   

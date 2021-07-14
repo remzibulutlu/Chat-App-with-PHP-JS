@@ -4,11 +4,11 @@
     header("location: users.php");
   }
 ?>
-
+      <!--signup form-->
 <?php include_once "header.php"; ?>
 <body>
   <div class="wrapper">
-    <section class="form signup">
+    <section class="signup form">
       <header>Chat App</header>
       <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
         <div class="error-text"></div>
@@ -29,7 +29,7 @@
         <div class="field input">
           <label>Password</label>
           <input type="password" name="password" placeholder="Enter new password" required>
-          <i class="fas fa-eye"></i>
+          <i class="fas fa-eye"></i> <!--password gösterip göstermeme ikonu-->
         </div>
         <div class="field image">
           <label>Select Image</label>

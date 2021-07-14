@@ -6,12 +6,12 @@
     $searchTerm = mysqli_real_escape_string($conn, $_POST['searchTerm']);
 
     $sql = "SELECT * FROM users WHERE NOT unique_id = {$outgoing_id} AND (fname LIKE '%{$searchTerm}%' OR lname LIKE '%{$searchTerm}%') ";
-    $output = "";
-    $query = mysqli_query($conn, $sql);
+    $output = "";                         /* 'where not unique id = {outgoing id}' sorgusu bize kendimiz hariç kişileri döndürür*/
+    $query = mysqli_query($conn, $sql);   /* '%{$searchTerm}%' ifadesi sorgumuza ... ile başlayan, veya ... ile biten anlamı katar*/
     if(mysqli_num_rows($query) > 0){
         include_once "data.php";
     }else{
-        $output .= 'No user found';
+        $output .= 'No user found'; /* arama terimine uyan kişi yoksa*/
     }
     echo $output;
 ?>
